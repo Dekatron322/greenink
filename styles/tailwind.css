@@ -1,0 +1,367 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../styles/fonts/AvenirLTStd-Heavy.otf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../styles/fonts/AvenirLTStd-Book.otf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../styles/fonts/AvenirLTStd-Medium.otf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../styles/fonts/AvenirLTStd-Light.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("../styles/fonts/LufgaRegular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("../styles/fonts/LufgaMedium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("../styles/fonts/LufgaSemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("../styles/fonts/LufgaBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("../styles/fonts/LufgaExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("../styles/fonts/LufgaBlack.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffffff;
+  scroll-behavior: smooth;
+  font-family: "Avenir";
+}
+
+.active-tab {
+  @apply flex items-center rounded-lg bg-black p-2 px-4  text-xs font-semibold text-[sidebar] text-white;
+}
+
+@media (min-width: 1024px) {
+  /* Adjust the width as needed for your "large" screen breakpoint */
+  .about-section {
+    background-color: #000000;
+    position: relative;
+    background-image: url("/ALTIMA.mp4");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.about-section {
+  background-color: #000000;
+  position: relative;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.inactive-tab {
+  @apply px-2 text-xs font-semibold;
+}
+
+.tab-bg {
+  @apply md:bg-gray-100;
+}
+
+.mobiletab-bg {
+  @apply max-md:bg-gray-100;
+}
+
+.small-card {
+  @apply max-md:mb-2  max-md:rounded-md  max-md:bg-white max-md:px-2 max-md:shadow;
+}
+
+[data-theme="dark"] .small-card {
+  @apply max-md:bg-black;
+}
+
+[data-theme="dark"] .tab-bg {
+  @apply md:bg-gray-700;
+}
+
+[data-theme="dark"] .mobiletab-bg {
+  @apply max-md:bg-gray-700;
+}
+
+[data-theme="dark"] body {
+  background-color: #1b1b1b;
+}
+
+.sidebar {
+  @apply bg-[#ebf0f0];
+}
+
+[data-theme="dark"] .sidebar {
+  @apply bg-[#000000];
+}
+
+.flexCenter {
+  @apply flex items-center justify-center;
+}
+
+.flexBetween {
+  @apply flex items-center justify-between;
+}
+
+.flexStart {
+  @apply flex items-center justify-start;
+}
+
+.group-date {
+  @apply px-3 py-4 text-4xl font-bold tracking-widest text-gray-300;
+}
+
+.timeline {
+  @apply ml-3 mt-3 space-y-14 border-l-4 border-gray-200 py-16;
+}
+
+.dot {
+  @apply absolute -left-5 top-5 h-10 w-10 rounded-full border-4 border-[#FFCC00] bg-[#FFCC00];
+}
+
+.text-small {
+  @apply text-sm font-medium;
+}
+
+.paddings {
+  @apply px-5 py-6 lg:px-20 xl:px-24 3xl:px-72;
+}
+
+.navbar {
+  @apply paddings fixed w-screen;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 12px;
+}
+
+.footer {
+  @apply paddings w-full flex-col gap-20 bg-primary-900;
+}
+
+.active {
+  font-weight: bold;
+  border-bottom: 2px solid #ffcc00;
+}
+
+.animate-left {
+  animation: slideFromLeft 1s ease-out;
+}
+
+.animate-right {
+  animation: slideFromRight 1s ease-out;
+}
+
+@keyframes slideFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation ease 1s forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.flip-left {
+  transform: perspective(400px) rotateY(-90deg);
+  animation: flipLeftAnimation ease 1s forwards;
+}
+
+.flip-right {
+  transform: perspective(400px) rotateY(90deg);
+  animation: flipRightAnimation ease 1s forwards;
+}
+
+@keyframes flipLeftAnimation {
+  0% {
+    transform: perspective(400px) rotateY(-90deg);
+  }
+  100% {
+    transform: perspective(400px) rotateY(0deg);
+  }
+}
+
+@keyframes flipRightAnimation {
+  0% {
+    transform: perspective(400px) rotateY(90deg);
+  }
+  100% {
+    transform: perspective(400px) rotateY(0deg);
+  }
+}
+
+.fade-down {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: fadeDownAnimation ease 1s forwards;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeUpAnimation ease 1s forwards;
+}
+
+@keyframes fadeDownAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUpAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bg-black {
+  background-color: black;
+  transition: background-color 0.3s ease;
+}
+
+.input-field {
+  @apply flex h-12 items-center rounded-lg border border-[#282828] bg-[#282828]  p-3 hover:border-[#FF3B30] focus:border-[#FF3B30] active:border-[#FF3B30] max-2xl:w-[70%] max-sm:w-[100%] md:w-[60%];
+}
+
+.input-field-two {
+  @apply flex h-12 items-center rounded-lg border border-[#FFFFFF1A] bg-[#FFFFFF1A]  p-3 hover:border-[#FF3B30] focus:border-[#FF3B30] active:border-[#FF3B30] max-2xl:w-[70%] max-sm:w-[100%] md:w-[682px];
+}
+
+.text-area-two {
+  @apply flex min-h-[200px]  rounded-lg border border-[#FFFFFF1A] bg-[#FFFFFF1A]  p-3 hover:border-[#FF3B30] focus:border-[#FF3B30] active:border-[#FF3B30] max-2xl:w-[70%] max-sm:w-[100%] md:w-[682px];
+}
+
+.text-area {
+  @apply flex min-h-[200px]  rounded-lg border border-[#282828] bg-[#282828]  p-3 hover:border-[#FF3B30] focus:border-[#FF3B30] active:border-[#FF3B30] max-2xl:w-[70%] max-sm:w-[100%] md:w-[60%];
+}
+
+/* Hide the default icon */
+.date-input::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* Changes the color to white */
+  cursor: pointer;
+}
+
+/* For Firefox */
+.date-input::-moz-calendar-picker-indicator {
+  filter: invert(1); /* Changes the color to white */
+  cursor: pointer;
+}
+
+/* For Edge and other modern browsers */
+.date-input {
+  color-scheme: light; /* Ensures consistent styling for dark mode */
+}
+
+input[type="date"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
