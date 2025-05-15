@@ -2,14 +2,14 @@ import { Metadata } from "next"
 import "styles/tailwind.css"
 
 export const metadata: Metadata = {
-  title: "Altima",
+  title: "Greenink Limited",
   description:
     "Experience unparalleled convenience and security with the Disappearing Handle Smart Door, featuring cutting-edge technology and sleek design. Perfect for your home, office, hotel, motel, and beyond.",
   twitter: {
     card: "summary_large_image",
   },
   openGraph: {
-    url: "https://altima.com/",
+    url: "https://greeninkltd.com/",
     images: [
       {
         width: 1200,

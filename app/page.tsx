@@ -1,97 +1,10 @@
 "use client"
 import Footer from "components/Footer/Footer"
-
-import Image from "next/image"
 import Navbar from "components/Navbar/Navbar"
-import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 import MainFooter from "components/Footer/MainFooter"
-import { useRouter } from "next/navigation"
 
 export default function Web() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-
-  const images = ["/Oak_00001.png", "/Mahogany_00000.png", "/Steel_00001.png", "/Glass_00001.png"] // Array of image paths
-
-  const openModal = (index: number) => {
-    setCurrentImageIndex(index)
-    setIsModalOpen(true)
-  }
-
-  const router = useRouter()
-
-  const closeModal = () => setIsModalOpen(false)
-
-  const handlePreOrderClick = () => {
-    const user = localStorage.getItem("user")
-    if (user) {
-      router.push("/preorder")
-    } else {
-      router.push("/signin")
-    }
-  }
-
-  const [openIndex, setOpenIndex] = useState<number>(0)
-
-  const handleToggle = (index: number) => {
-    setOpenIndex(openIndex === index ? -1 : index) // Close if the same index is clicked
-  }
-
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false)
-
-  const openVideoModal = () => {
-    setIsVideoModalOpen(true)
-  }
-
-  const closeVideoModal = () => {
-    setIsVideoModalOpen(false)
-  }
-
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [hasInteracted, setHasInteracted] = useState(false)
-
-  const handleWatchVideo = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause()
-      } else {
-        videoRef.current.muted = false
-        videoRef.current.play()
-      }
-      setIsPlaying(!isPlaying)
-      setHasInteracted(true)
-    }
-  }
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!hasInteracted) return
-
-      if (videoRef.current) {
-        const videoElement = videoRef.current
-        const videoRect = videoElement.getBoundingClientRect()
-        const isVideoVisible =
-          videoRect.top >= -videoRect.height * 0.5 && videoRect.bottom <= window.innerHeight + videoRect.height * 0.5
-
-        if (!isVideoVisible && isPlaying) {
-          videoElement.pause()
-          setIsPlaying(false)
-        } else if (isVideoVisible && !isPlaying && hasInteracted) {
-          videoElement.muted = false
-          videoElement
-            .play()
-            .then(() => setIsPlaying(true))
-            .catch((error) => console.error("Video play failed:", error))
-        }
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [isPlaying, hasInteracted])
-
   return (
     <section className="bg-black">
       <Navbar />
@@ -235,8 +148,6 @@ export default function Web() {
           </div>
         </div>
       </section>
-
-      {/* <ContactUs /> */}
 
       <MainFooter />
 
