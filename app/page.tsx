@@ -37,7 +37,7 @@ export default function Web() {
               </p>
 
               <p className="mt-4 text-center text-lg leading-7 text-[#ffffffcc] max-xl:text-sm xl:max-w-4xl">
-                Green Ink proviides holistic business solutions with the aim of upscaling small and medium sized
+                Green Ink provides holistic business solutions with the aim of upscaling small and medium sized
                 businesses to operationg at full capacity and maximizing value propositions
               </p>
             </div>

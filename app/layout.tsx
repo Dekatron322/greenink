@@ -4,7 +4,7 @@ import "styles/tailwind.css"
 export const metadata: Metadata = {
   title: "Greenink Limited",
   description:
-    "Experience unparalleled convenience and security with the Disappearing Handle Smart Door, featuring cutting-edge technology and sleek design. Perfect for your home, office, hotel, motel, and beyond.",
+    "Green Ink provides holistic business solutions with the aim of upscaling small and medium sized businesses to operationg at full capacity and maximizing value propositions",
   twitter: {
     card: "summary_large_image",
   },
