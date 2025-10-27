@@ -63,6 +63,9 @@ export default function Web() {
                 <li className="list-disc  pb-4 max-sm:text-xs">Product Design & Management</li>
                 <li className="list-disc  pb-4 max-sm:text-xs">Business Strategy & Developemnt</li>
                 <li className="list-disc  pb-4 max-sm:text-xs">Brand Identity & Positioning</li>
+                <li className="list-disc  pb-4 max-sm:text-xs">Website Development & SEO</li>
+                <li className="list-disc  pb-4 max-sm:text-xs">Mobile App Development</li>
+                <li className="list-disc  pb-4 max-sm:text-xs">Integrated Market Strategy</li>
                 <li className="list-disc  pb-4 max-sm:text-xs">Business & Technology Competency & Audit</li>
                 <li className="list-disc  pb-4 max-sm:text-xs">Venture & Investment Audit</li>
               </ul>
